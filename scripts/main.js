@@ -6,13 +6,13 @@ import { FuncLoadContent } from './utils.js';
 let user = {};
 
 $(document).ready(function () {
-    FuncLoadContent("spinner_content", "/02_fake_store/pages/components/spinner.html");
-    FuncLoadContent("toast_content", "/02_fake_store/pages/components/toast.html");
+    FuncLoadContent("spinner_content", "/pages/components/spinner.html");
+    FuncLoadContent("toast_content", "/pages/components/toast.html");
     setTimeout(() => {
-        FuncLoadContent("modals_content", "/02_fake_store/pages/components/modals.html");
-        FuncLoadContent("header_content_div", "/02_fake_store/pages/components/header.html");
-        FuncLoadContent("footer_content_div", "/02_fake_store/pages/components/footer.html");
-        FuncLoadContent("content_div", "/02_fake_store/pages/home.html");
+        FuncLoadContent("modals_content", "/pages/components/modals.html");
+        FuncLoadContent("header_content_div", "/pages/components/header.html");
+        FuncLoadContent("footer_content_div", "/pages/components/footer.html");
+        FuncLoadContent("content_div", "/pages/home.html");
     }, 100);
     setInterval(() => {
         user = FuncGetUserLoggedIn();
@@ -36,7 +36,7 @@ document.addEventListener("click", event => {
     };
     if (target.name?.includes("_html")) {
         event.preventDefault();
-        FuncLoadContent("content_div", `/02_fake_store/pages/${target.name.replace(/_html/g, ".html")}`)
+        FuncLoadContent("content_div", `/pages/${target.name.replace(/_html/g, ".html")}`)
             .then(e => {
                 // if (target.name === "create_account_html") {
                 // document.getElementById('script_1')?.remove();

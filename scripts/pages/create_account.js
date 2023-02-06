@@ -140,7 +140,7 @@ export function FuncCreateAccountFormSubmited(event) {
             inputPrivacy.checked = false;
             FuncCreateToast("success", "Message:", "User created successfully.");
             setTimeout(() => {
-                FuncLoadContent("content_div", "/02_fake_store/pages/login.html").then(e => {
+                FuncLoadContent("content_div", "/pages/login.html").then(e => {
                     document.getElementsByTagName('header')[0].style.display = "none";
                     document.getElementsByTagName('footer')[0].style.display = "none";
                 });

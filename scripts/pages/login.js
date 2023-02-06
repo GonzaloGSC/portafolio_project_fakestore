@@ -78,7 +78,7 @@ export function FuncLogin(event) {
                 inputPassw.className = "";
                 FuncCreateToast("success", "Message:", "Successful login. Welcome.");
                 setTimeout(() => {
-                    FuncLoadContent("content_div", "/02_fake_store/pages/all.html").then(e => {
+                    FuncLoadContent("content_div", "/pages/all.html").then(e => {
                         document.getElementsByTagName('header')[0].style.display = "flex";
                         document.getElementsByTagName('footer')[0].style.display = "flex";
                     });
