@@ -22,6 +22,7 @@ export function FuncGetUserLoggedIn() {
     let user = {};
     if (localStorage.getItem("users")) {
         actualUsers = JSON.parse(localStorage.getItem("users"));
+        console.log("USERS: ", actualUsers);
         let index = actualUsers.findIndex(e => e.logged_in === true);
         if (index == -1) {
             actualUsers = FuncClearLoggedinUsers(actualUsers);
