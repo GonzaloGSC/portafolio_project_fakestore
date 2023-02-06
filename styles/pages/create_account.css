@@ -1,0 +1,28 @@
+#create_account_form_terms {
+    margin: 0;
+    padding: 0;
+}
+
+.my-account-container {
+    display: flex;
+}
+
+#create_account_form>div:nth-child(5)>div>div:nth-child(1),
+#create_account_form>div:nth-child(6)>div>div:nth-child(1) {
+    width: 250px;
+}
+
+@media (max-width: 1000px) {
+    #create_account_form>div:nth-child(5)>div,
+    #create_account_form>div:nth-child(6)>div,
+    #create_account_form>div.custom-row.f--justify-c {
+        display: flex;
+        justify-content: center;
+        width: 250px;
+    }
+
+    #create_account_form>div:nth-child(5)>div>div:nth-child(1),
+    #create_account_form>div:nth-child(6)>div>div:nth-child(1) {
+        width: 200px;
+    }
+}

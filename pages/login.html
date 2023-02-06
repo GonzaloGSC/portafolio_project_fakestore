@@ -1,0 +1,55 @@
+<div class="login-container f--justify-c">
+    <div class="s--display-f f--direction-c s--dark-border">
+        <div class="s--display-f f--justify-c">
+            <div class="s--display-b s--margin-4px s--align-c">
+                <img class="login-logo-image" name="home_html" src="/02_fake_store/media/images/logo.png" alt="logo">
+            </div>
+        </div>
+        <h1 class="t--align-c">Login</h1>
+        <form id="login_form">
+            <div class="s--display-f f--justify-c">
+                <div class="s--display-b">
+                    <label class="t--12pt t--medium" for="login_form_email">*Email:</label>
+                    <input type="email" name="email" id="login_form_email" required>
+                </div>
+            </div>
+            <div class="s--display-f f--justify-c">
+                <div class="s--display-b">
+                    <label class="t--12pt t--medium" for="login_form_password">*Password:</label>
+                    <input type="password" name="password" id="login_form_password" required minlength="4"
+                        maxlength="10">
+                </div>
+            </div>
+            <div class="s--display-f f--justify-c s--margin-t-12px">
+                <div class="s--display-b">
+                    <button id="login_form_button"
+                        class="t--blod t--12pt t--line-32pt s--white-color s--success-backg s--white-border"
+                        type="submit">Log in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="s--display-f s--justify-c s--margin-t-12px">
+        <p>New to FakeStore? <a href="" name="create_account_html">Create an account.</a></p>
+    </div>
+    <div class="s--display-f s--justify-c s--margin-12px">
+        <div class="custom-col s--margin-4px">
+            <a onclick="FuncOpenModal('modal_1')">Terms</a>
+        </div>
+        <div class="custom-col s--margin-4px">
+            <a onclick="FuncOpenModal('modal_2')">Privacy</a>
+        </div>
+    </div>
+
+    <div class="s--display-f f--justify-c s--padding-t-12px">
+        <div class="s--display-b">
+            <button class="t--blod t--12pt t--line-32pt s--white-color s--warning-backg s--white-border"
+                onclick="FuncOpenModal('modal_3')">Delete
+                local data</button>
+        </div>
+    </div>
+    <div class="s--display-f s--justify-c s--margin-12px t--align-j">
+        <p><b>Notice:</b> Delete local data includes data such as created users and all information linked to them.
+            Remember that this is a frontend sample site, there is no connection to any API.</p>
+    </div>
+</div>

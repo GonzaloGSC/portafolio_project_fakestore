@@ -1,0 +1,52 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content_div>.login-container a {
+    cursor: pointer;
+}
+
+#content_div>.login-container p {
+    max-width: 400px;
+}
+
+#content_div>div>div.s--display-f.f--justify-c.s--padding-t-12px {
+    border-top: 2px solid var(--color_very_light_pink);
+    width: 100%;
+    max-width: 50%;
+}
+
+#content_div>.login-container>div:first-child {
+    border-radius: 20px;
+    border: 1px solid var(--color_dark_soft);
+    box-shadow: 1px 1px 5px var(--color_dark_soft);
+    padding: 30px;
+    background-color: var(--color_modal_background_content);
+    width: 400px;
+}
+
+.login-logo-image {
+    width: 250px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    #content_div>.login-container>div:first-child {
+        width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    #content_div>.login-container>div:first-child {
+        width: min-content;
+        padding: 10px;
+    }
+
+    #content_div>div>div.s--display-f.s--justify-c.s--margin-t-12px>p {
+        display: flex;
+        flex-direction: column;
+    }
+}

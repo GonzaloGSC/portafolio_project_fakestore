@@ -1,0 +1,422 @@
+:root {
+    --color_very_light_pink: #C7C7C7;
+    --color_white: #FFFFFF;
+    --color_text_input_field: #F7F7F7;
+    --color_black: #000000;
+    --color_hospital_green: #63d372fa;
+    --color_dark: #232830;
+    --color_dark_soft: #6e6e6e;
+    --color_red_error_1: #ff635e;
+    --color_red_error_2: #ff8d89;
+    --color_red_warning_1: #ffa909;
+    --color_red_warning_2: #ffc251;
+    --color_modal_background: rgba(0, 0, 0, 0.664);
+    --color_modal_background_content: #fafafa;
+    --color_hospital_green_selected: #9deea8;
+}
+
+/* ------------------------------- BASE STYLES ------------------------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid var(--color_very_light_pink);
+    background: var(--color_modal_background_content);
+}
+
+#content_div {
+    min-height: 80vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+p,
+a,
+label,
+button,
+select {
+    font-family: 'Quicksand', sans-serif;
+}
+
+button {
+    border: none;
+    width: 160px;
+    border-radius: 20px;
+}
+
+.custom-row {
+    display: flex;
+    width: 100%;
+}
+
+.custom-col {
+    display: block;
+    margin: 20px;
+    width: max-content;
+}
+
+.frc-captcha {
+    min-width: 220px;
+    max-width: 260px;
+}
+
+.frc-button {
+    font-size: 8pt;
+}
+
+/* ------------------------------- BASE STATES ------------------------------- */
+
+button.s--white-backg:focus,
+button.s--white-backg:hover,
+button.s--success-backg:focus,
+button.s--success-backg:hover {
+    background: var(--color_hospital_green_selected);
+    color: var(--color_dark_soft);
+    border-bottom-style: dashed;
+    border-top-style: dashed;
+    border-color: var(--color_dark_soft);
+}
+
+button.s--error-backg:focus,
+button.s--error-backg:hover {
+    background: var(--color_red_error_1);
+    color: var(--color_dark_soft);
+    border-bottom-style: dashed;
+    border-top-style: dashed;
+    border-color: var(--color_dark_soft);
+}
+
+button.s--warning-backg:focus,
+button.s--warning-backg:hover {
+    background: var(--color_red_warning_1);
+    color: var(--color_dark_soft);
+    border-bottom-style: dashed;
+    border-top-style: dashed;
+    border-color: var(--color_dark_soft);
+}
+
+/* ------------------------------- INPUTS STYLES ------------------------------- */
+
+input.is-invalid {
+    border-color: var(--color_red_error_1);
+    -webkit-box-shadow: 0 0 8px var(--color_red_error_2);
+    -moz-box-shadow: 0 0 8px var(--color_red_error_2);
+    box-shadow: 0 0 8px var(--color_red_error_2);
+}
+
+/* ------------------------------- TEXTS STYLES ------------------------------- */
+
+.t--blod {
+    font-weight: bold;
+}
+
+.t--medium {
+    font-weight: 500;
+}
+
+.t--regular {
+    font-weight: 300;
+}
+
+.t--20pt {
+    font-size: 20pt;
+}
+
+.t--16pt {
+    font-size: 16pt;
+}
+
+.t--12pt {
+    font-size: 12pt;
+}
+
+.t--align-c {
+    text-align: center;
+}
+
+.t--align-l {
+    text-align: left;
+}
+
+.t--align-r {
+    text-align: right;
+}
+
+.t--align-j {
+    text-align: justify;
+}
+
+.t--line-40pt {
+    line-height: 40pt;
+}
+
+.t--line-32pt {
+    line-height: 32pt;
+}
+
+.t--line-24pt {
+    line-height: 24pt;
+}
+
+.t--line-16pt {
+    line-height: 16pt;
+}
+
+/* ------------------------------- ESPECIAL STYLES ------------------------------- */
+
+.f--justify-c {
+    justify-content: center;
+}
+
+.f--justify-l {
+    justify-content: left;
+}
+
+.f--justify-r {
+    justify-content: right;
+}
+
+.f--justify-sb {
+    justify-content: space-between;
+}
+
+.f--justify-sa {
+    justify-content: space-around;
+}
+
+.f--direction-r {
+    flex-direction: row;
+}
+
+.f--direction-c {
+    flex-direction: column;
+}
+
+.s--margin-4px {
+    margin: 4px;
+}
+
+.s--margin-8px {
+    margin: 8px;
+}
+
+.s--margin-12px {
+    margin: 12px;
+}
+
+.s--margin-16px {
+    margin: 16px;
+}
+
+.s--margin-20px {
+    margin: 16px;
+}
+
+.s--margin-l-4px {
+    margin-left: 4px;
+}
+
+.s--margin-l-8px {
+    margin-left: 8px;
+}
+
+.s--margin-l-12px {
+    margin-left: 12px;
+}
+
+.s--margin-l-16px {
+    margin-left: 16px;
+}
+
+.s--margin-l-20px {
+    margin-left: 20px;
+}
+
+.s--margin-t-4px {
+    margin-top: 4px;
+}
+
+.s--margin-t-8px {
+    margin-top: 8px;
+}
+
+.s--margin-t-12px {
+    margin-top: 12px;
+}
+
+.s--margin-t-16px {
+    margin-top: 16px;
+}
+
+.s--margin-t-20px {
+    margin-top: 20px;
+}
+
+.s--margin-b-4px {
+    margin-bottom: 4px;
+}
+
+.s--margin-b-8px {
+    margin-bottom: 8px;
+}
+
+.s--margin-b-12px {
+    margin-bottom: 12px;
+}
+
+.s--margin-b-16px {
+    margin-bottom: 16px;
+}
+
+.s--margin-b-20px {
+    margin-bottom: 20px;
+}
+
+.s--margin-r-4px {
+    margin-right: 4px;
+}
+
+.s--margin-r-8px {
+    margin-right: 8px;
+}
+
+.s--margin-r-12px {
+    margin-right: 12px;
+}
+
+.s--margin-r-16px {
+    margin-right: 16px;
+}
+
+.s--margin-r-20px {
+    margin-right: 20px;
+}
+
+.s--padding-4px {
+    padding: 4px;
+}
+
+.s--padding-8px {
+    padding: 8px;
+}
+
+.s--padding-12px {
+    padding: 12px;
+}
+
+.s--padding-16px {
+    padding: 16px;
+}
+
+.s--padding-20px {
+    padding: 20px;
+}
+
+.s--padding-t-4px {
+    padding-top: 4px;
+}
+
+.s--padding-t-8px {
+    padding-top: 8px;
+}
+
+.s--padding-t-12px {
+    padding-top: 12px;
+}
+
+.s--padding-t-16px {
+    padding-top: 16px;
+}
+
+.s--padding-t-20px {
+    padding-top: 20px;
+}
+
+.s--display-f {
+    display: flex;
+}
+
+.s--display-b {
+    display: block;
+}
+
+.s--align-c {
+    align-self: center;
+}
+
+.s--fwrap-w {
+    flex-wrap: wrap;
+}
+
+.s--fwrap-nw {
+    flex-wrap: nowrap;
+}
+
+.s--success-color {
+    color: var(--color_hospital_green);
+}
+
+.s--white-color {
+    color: var(--color_white);
+}
+
+.s--black-color {
+    color: var(--color_black);
+}
+
+.s--dark-color {
+    color: var(--color_dark);
+}
+
+.s--lightpink-color {
+    color: var(--color_very_light_pink);
+}
+
+.s--error-backg {
+    background: var(--color_red_error_2);
+}
+
+.s--warning-backg {
+    background: var(--color_red_warning_2);
+}
+
+.s--success-backg {
+    background: var(--color_hospital_green);
+}
+
+.s--white-backg {
+    background: var(--color_white);
+}
+
+.s--success-border {
+    border: 2px solid var(--color_hospital_green);
+}
+
+.s--dark-border {
+    border: 2px solid var(--color_dark_soft);
+}
+
+.s--white-border {
+    border: 2px solid var(--color_white);
+}
+
+.s--width-100px {
+    width: 100px;
+}
+
+/* ------------------------------- MEDIA QUERYS STYLES ------------------------------- */
+
+@media (max-width: 1000px) {
+    .custom-row {
+        display: block;
+    }
+}
