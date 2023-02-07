@@ -11,10 +11,14 @@ document.addEventListener("input", event => {
 });
 
 export function FuncClearLoggedinUsers(usersArray) {
-    return usersArray.map(e => {
-        e.logged_in = false;
-        return e;
-    });
+    if (usersArray?.length > 0) {
+        return usersArray.map(e => {
+            e.logged_in = false;
+            return e;
+        });
+    } else {
+        return [];
+    };
 };
 
 export function FuncGetUserLoggedIn() {
@@ -22,13 +26,16 @@ export function FuncGetUserLoggedIn() {
     let user = {};
     if (localStorage.getItem("users")) {
         actualUsers = JSON.parse(localStorage.getItem("users"));
-        console.log("USERS: ", actualUsers);
         let index = actualUsers.findIndex(e => e.logged_in === true);
         if (index == -1) {
             actualUsers = FuncClearLoggedinUsers(actualUsers);
             localStorage.setItem("users", JSON.stringify(actualUsers));
             document.getElementById('logged_in_div').style.display = "none";
-            document.getElementById('no_logged_in_div').style.display = "flex";
+            if (window.innerWidth <= 1000) { //CLASES
+                document.getElementById('no_logged_in_div').style.display = "block";
+            } else {
+                document.getElementById('no_logged_in_div').style.display = "flex";
+            };
         } else {
             user = actualUsers[index];
             document.getElementById('logged_in_div').style.display = "flex";
@@ -38,7 +45,7 @@ export function FuncGetUserLoggedIn() {
     } else {
         document.getElementById('logged_in_div').style.display = "none";
         document.getElementById('no_logged_in_div').style.display = "flex";
-    }
+    };
     return user;
 }
 
@@ -94,3 +101,10 @@ export function FuncLogin(event) {
         FuncCreateToast("warning", "Input error:", errorMessage);
     };
 }
+
+export function FuncLogout(event) {
+    event.preventDefault();
+    let actualUsers = JSON.parse(localStorage.getItem("users"));
+    actualUsers = FuncClearLoggedinUsers(actualUsers);
+    localStorage.setItem("users", JSON.stringify(actualUsers));
+};

@@ -68,11 +68,13 @@
     cursor: pointer;
 }
 
-#hidden-nav-menu {
+#hidden-nav-menu,
+#hidden_nav_user {
     display: none;
 }
 
-#hidden-nav {
+#hidden-nav,
+#hidden_nav_user {
     display: none;
     position: fixed;
     flex-direction: column;
@@ -83,19 +85,28 @@
     border: 2px solid var(--color_very_light_pink);
 }
 
-#hidden-nav>a {
+#hidden_nav_user {
+    top: 54px;
+    translate: -100px;
+}
+
+#hidden-nav>a,
+#hidden_nav_user>a {
     border-bottom: 2px solid var(--color_hospital_green);
     width: 200px;
-    color: var(--color_dark);
+    /* color: var(--color_dark); */
     text-decoration: None;
 }
 
-#hidden-nav>a:last-child {
+#hidden-nav>a:last-child,
+#hidden_nav_user>a:last-child {
     border-bottom: none;
 }
 
 #hidden-nav>a:hover,
-#hidden-nav>a:focus {
+#hidden-nav>a:focus,
+#hidden_nav_user>a:hover,
+#hidden_nav_user>a:focus {
     color: var(--color_hospital_green);
     transition: 0.25s;
     outline: none;
@@ -131,7 +142,7 @@
 
 #notifications_count_shopping,
 #notifications_count_user {
-    display: flex;
+    display: none;
     position: fixed;
     translate: 15px;
     top: 29px;
@@ -141,6 +152,13 @@
     justify-content: center;
     border-radius: 50px;
     color: white;
+}
+
+@media (max-width: 1500px) {
+    #hidden_nav_user {
+        right: 5px;
+        translate: 0;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -165,4 +183,18 @@
         display: flex;
     }
 
+    #hidden_nav_user {
+        top: 75px;
+        right: 0px;
+    }
+}
+
+@media (max-width: 830px) {
+    #p_welcome_to_user_col {
+        display: none;
+    }
+
+    #logged_in_div>div.custom-col.s--margin-4px.s--margin-r-20px {
+        margin: 4px;
+    }
 }

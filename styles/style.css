@@ -385,6 +385,22 @@ input.is-invalid {
     color: var(--color_dark);
 }
 
+.s--error1-color {
+    color: var(--color_red_error_1);
+}
+
+.s--error2-color {
+    color: var(--color_red_error_2);
+}
+
+.s--warning1-color {
+    color: var(--color_red_warning_1);
+}
+
+.s--warning2-color {
+    color: var(--color_red_warning_2);
+}
+
 .s--lightpink-color {
     color: var(--color_very_light_pink);
 }

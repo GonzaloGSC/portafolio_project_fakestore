@@ -1,9 +1,11 @@
 import { FuncCreateAccountFormSubmited } from './pages/create_account.js';
-import { FuncLogin, FuncGetUserLoggedIn } from './pages/login.js';
+import { FuncLogin, FuncLogout, FuncGetUserLoggedIn } from './pages/login.js';
 import { FuncCreateToast } from './components/toast.js';
 import { FuncLoadContent } from './utils.js';
+import { FuncGetPurchases } from './pages/products.js'
 
 let user = {};
+let purchases = [];
 
 $(document).ready(function () {
     FuncLoadContent("spinner_content", "../pages/components/spinner.html");
@@ -16,6 +18,17 @@ $(document).ready(function () {
     }, 100);
     setInterval(() => {
         user = FuncGetUserLoggedIn();
+        purchases = FuncGetPurchases(user);
+        if (purchases.length > 0) {
+            document.getElementById("notifications_count_shopping").style.display = "flex";
+            if (purchases.length <= 99) {
+                document.getElementById("notifications_count_shopping").textContent = purchases.length;
+            } else {
+                document.getElementById("notifications_count_shopping").textContent = "99+";
+            };
+        } else {
+            document.getElementById("notifications_count_shopping").style.display = "none";
+        };
     }, 1000);
 });
 
@@ -65,7 +78,17 @@ document.addEventListener("click", event => {
                     document.getElementsByTagName('footer')[0].style.display = "flex";
                 };
 
-            })
+            });
+    };
+
+    if (target.name === "log_out") {
+        document.getElementsByTagName('header')[0].style.display = "none";
+        document.getElementsByTagName('footer')[0].style.display = "none";
+        FuncLogout(event);
+        FuncLoadContent("content_div", "../pages/login.html")
+            .then(e => {
+                FuncCreateToast("info", "Message:", "Session has been closed.");
+            });
     };
 });
 

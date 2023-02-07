@@ -1,18 +1,35 @@
-let show_menu = false;
+let showMenu = false;
+let showUserMenu = false;
 
 function FuncNavMenuButton() {
-    if (show_menu) {
+    if (showMenu) {
         document.getElementById("hidden-nav").style.display = "none";
     } else {
         document.getElementById("hidden-nav").style.display = "flex";
     };
-    show_menu = !show_menu;
+    showMenu = !showMenu;
 };
 
 function FuncCloseNavMenuButton() {
-    if (show_menu) {
+    if (showMenu) {
         document.getElementById("hidden-nav").style.display = "none";
-        show_menu = !show_menu;
+        showMenu = !showMenu;
+    };
+};
+
+function FuncNavUserMenuButton() {
+    if (showUserMenu) {
+        document.getElementById("hidden_nav_user").style.display = "none";
+    } else {
+        document.getElementById("hidden_nav_user").style.display = "flex";
+    };
+    showUserMenu = !showUserMenu;
+};
+
+function FuncCloseNavUserMenuButton() {
+    if (showUserMenu) {
+        document.getElementById("hidden_nav_user").style.display = "none";
+        showUserMenu = !showUserMenu;
     };
 };
 
@@ -21,5 +38,10 @@ document.addEventListener('click', event => {
         FuncNavMenuButton();
     } else {
         FuncCloseNavMenuButton();
+    };
+    if (document.getElementById('nav_user_menu_button').contains(event.target)) {
+        FuncNavUserMenuButton();
+    } else {
+        FuncCloseNavUserMenuButton();
     };
 });

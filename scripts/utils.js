@@ -11,7 +11,6 @@ export const FuncLoadContent = async (divId, url) => {
             FuncHideSpinner("spinner_1");
         }, 500);
     } catch (error) {
-        console.error(error);
         FuncCreateToast("error", "Error:", error);
         setTimeout(() => {
             FuncHideSpinner("spinner_1");
