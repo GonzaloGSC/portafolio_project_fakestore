@@ -1,2 +1,3 @@
 # portafolio_project_fakestore
-Test
+
+deploy: https://main.d34y24gjqadwhe.amplifyapp.com/
